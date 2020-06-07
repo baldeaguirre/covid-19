@@ -2,10 +2,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# Data URL
-base_url = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/'
-countries = ['China', 'US', 'Italy', 'Spain', 'United Kingdom', 'Mexico']
-
 def raw_data(base_url):
     confirmed_cases_data_url = base_url + 'time_series_covid19_confirmed_global.csv'
     death_cases_data_url = base_url + 'time_series_covid19_deaths_global.csv'
@@ -55,6 +51,12 @@ def plot_time_series(df, plot_title, x_label, y_label, logy=False, fname='defaul
     plt.title(plot_title, fontsize=20)
     plt.savefig(fname)
     plt.show()
+
+# Data URL
+base_url = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/'
+countries = ['China', 'US', 'Italy', 'Spain', 'United Kingdom', 'Mexico']
+# countries = ['Netherlands', 'Canada', 'Turkey', 'Sweden', 'Mexico', 'Switzerland']
+# countries = ['Brazil', 'Mexico', 'Ecuador', 'Peru', 'Colombia', 'Chile']
 
 raw_data_confirmed, raw_data_deaths, raw_data_recovered = raw_data(base_url)
 # print(raw_data_confirmed.describe, '\n')
